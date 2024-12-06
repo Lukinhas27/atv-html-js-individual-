@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Parágrafos</title>
+</head>
+<body>
+
+    <h1>Adicionar Parágrafos</h1>
+    <input type="text" id="inputTexto" placeholder="Digite um parágrafo">
+    <button id="botaoAdicionar">Adicionar Parágrafo</button>
+    <div id="paragrafos"></div>
+
+    <script>
+        let contadorLinhas = 0;
+
+        document.getElementById('botaoAdicionar').addEventListener('click', function() {
+            const texto = document.getElementById('inputTexto').value;
+
+            if (texto.trim() !== "") {
+                const novoParagrafo = document.createElement('p');
+                novoParagrafo.textContent = texto;
+                document.getElementById('paragrafos').appendChild(novoParagrafo);
+                contadorLinhas++;
+                document.getElementById('inputTexto').value = ""; 
+            }
+
+            alert(`${contadorLinhas} linhas foram adicionadas`);
+        });
+    </script>
+
+</body>
+</html>
